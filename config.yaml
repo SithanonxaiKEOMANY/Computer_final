@@ -1,0 +1,22 @@
+app:
+  port: 9000
+
+postgres:
+  host: localhost
+  port: 5431
+  user: postgres
+  password: root123
+  database: ceit_db
+
+# mysql:
+# #  host: localhost
+# #  port: 3306
+# #  user: mysql
+# #  password: root123
+# #  database: naga
+#   host: localhost
+#   username: root
+#   password: root123
+#   database: test
+
+
