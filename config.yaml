@@ -2,12 +2,13 @@ app:
   port: 9000
 
 postgres:
-  host: localhost
-  port: 5431
-  user: postgres
-  password: root123
+  host: dpg-cq3pp9aju9rs739iep8g-a
+  port: 5432
+  user: ceit_db
+  password: 0urXtOt30QgI8d4ov5PFDbS07lvUSHqD
   database: ceit_db
 
+  
 # mysql:
 # #  host: localhost
 # #  port: 3306
