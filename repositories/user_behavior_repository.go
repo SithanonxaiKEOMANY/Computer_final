@@ -299,7 +299,7 @@ func (ub *userBehaviorRepository) GetByUserIDRepository(userID uint) (*models.Us
 }
 
 func NewUserBehaviorRepository(db *gorm.DB) UserBehaviorRepository {
-	//db.Migrator().DropTable(models.UserBehavior{})
-	//db.AutoMigrate(models.UserBehavior{})
+	// db.Migrator().DropTable(models.UserBehavior{})
+	// db.AutoMigrate(models.UserBehavior{})
 	return &userBehaviorRepository{db: db}
 }

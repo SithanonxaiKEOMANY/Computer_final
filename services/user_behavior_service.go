@@ -59,7 +59,7 @@ func (ub *userBehaviorService) ReportUserBehaviorWithPaginationService(request r
 	paginatedResponse := responses.UserBehaviorPaginatedResponse{
 		TotalPages:  response.TotalPages,
 		PerPage:     response.PerPage,
-		CurrentPage: response.CurrentPage,
+		CurrentPage: response.CurrentPage, 
 		Sorting:     response.Sorting,
 		Items:       responseData,
 	}

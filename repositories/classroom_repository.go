@@ -20,14 +20,6 @@ type ClassRoomRepository interface {
 
 type classroomRepository struct{ db *gorm.DB }
 
-func (c *classroomRepository) CheckClassRoomCodeAlreadyHas(classRoomCode string) (bool, error) {
-	var count int64
-	query := c.db.Model(&models.Classroom{}).Where("class_room_code = ?", classRoomCode).Count(&count)
-	if query.Error != nil {
-		return false, query.Error
-	}
-	return count > 0, nil
-}
 
 func (c *classroomRepository) checkClassNameRepository(className, classYear int, major string) (bool, error) {
 	var count int64
@@ -108,6 +100,6 @@ func (c *classroomRepository) UpdateClassRoomRepository(request *models.Classroo
 
 func NewRoomRepository(db *gorm.DB) ClassRoomRepository {
 	//db.Migrator().DropTable(models.ClassRoom{})
-	//db.AutoMigrate(models.ClassRoom{})
+	//db.AutoMigrate(models.Classroom{})
 	return &classroomRepository{db: db}
 }

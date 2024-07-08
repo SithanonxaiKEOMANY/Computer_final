@@ -98,10 +98,8 @@ func (s *subjectRepository) GetSubjectRepository() ([]models.Subject, error) {
 	return model, nil
 }
 
-func NewSubjectRepository(
-	db *gorm.DB,
-) SubjectRepository {
-	return &subjectRepository{
-		db: db,
-	}
+func NewSubjectRepository(db *gorm.DB) SubjectRepository {
+	//db.Migrator().DropTable(models.Subject{})
+	//db.AutoMigrate(models.Subject{})
+	return &subjectRepository{db: db}
 }

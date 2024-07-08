@@ -2,7 +2,7 @@ package database
 
 import (
 	"fmt"
-	"go_starter/config"
+	
 	"go_starter/logs"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -19,16 +19,10 @@ var openPostgresConnectionDB *gorm.DB
 var errPostgres error
 
 func PostgresConnection() (*gorm.DB, error) {
-	myDSN := fmt.Sprintf("host=%v user=%v password=%v dbname=%v port=%v sslmode=disable TimeZone=Asia/Bangkok",
-		config.Env("postgres.host"),
-		config.Env("postgres.user"),
-		config.Env("postgres.password"),
-		config.Env("postgres.database"),
-		config.Env("postgres.port"),
-	)
+
 
 	fmt.Println("CONNECTING_TO_POSTGRES_DB")
-	openPostgresConnectionDB, errPostgres = gorm.Open(postgres.Open(myDSN), &gorm.Config{
+	openPostgresConnectionDB, errPostgres = gorm.Open(postgres.Open("postgresql://ceit_db:0urXtOt30QgI8d4ov5PFDbS07lvUSHqD@dpg-cq3pp9aju9rs739iep8g-a.singapore-postgres.render.com/ceit_db"), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 		NowFunc: func() time.Time {
 			ti, _ := time.LoadLocation("Asia/Bangkok")
